@@ -36,7 +36,7 @@ int main()
 	if(!(input = popen("cat | sort -r -g", "r"))) {return 1;}
 
 	/* checks if the number is a prime, and prints if not */
-	while(fgets(buff, sizeof(buff), input) != NULL) 
+	while(atoi(fgets(buff, sizeof(buff), input)) != -1) 
 	{
 		if(check_primo(atoi(buff)) != 2) {printf("%d\n", atoi(buff));}
 	}
